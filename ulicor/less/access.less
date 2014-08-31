@@ -1,0 +1,89 @@
+
+#access { 
+	display: block;
+	float: left;
+	margin: 0 auto;
+	width: 185px;
+	margin-bottom:20px;
+	margin-top:5px;
+}
+#access .menu-header,
+div.menu {
+	font-size: 13px;
+	margin-left: 12px;
+	width: 238px;
+}
+#access .menu-header ul,
+div.menu ul {
+	list-style: none;
+	margin: 0;
+}
+#access .menu-header li,
+div.menu li {
+	float: left;
+	position: relative;
+}
+#access a {
+	color: #333;
+	display: block;
+	line-height: 28px;
+	padding: 0 10px;
+	text-decoration: none;
+	list-style-type:none;
+}
+#access ul a { 
+    background: none repeat scroll 0 0 #EEEEEE;
+    border-bottom: 1px solid #999999;
+}
+#access ul li {
+margin:0px;
+	position: relative;
+}
+#access ul ul { 
+    display: none;
+    float: left;
+    position: absolute;
+    right: -179px;
+    top: -6px;
+    width: 178px;
+    z-index: 99999;
+}
+#access ul ul li {
+	min-width: 180px;
+	margin:0px;
+}
+#access ul ul ul {
+	left: 100%;
+	top: 0;
+}
+#access ul ul a {
+	background: #333;
+		color: #aaa;
+	display: block;
+}
+
+#access li:hover > a {
+	background: #333;
+	color: #fff;
+}
+
+#access ul ul :hover > a {
+	background: #666;
+	color: #fff;
+}
+#access ul li:hover > ul {
+	display: block;
+}
+#access ul li.current_page_item > a,
+#access ul li.current-menu-ancestor > a,
+#access ul li.current-menu-item > a,
+#access ul li.current-menu-parent > a {
+	color: #fff;
+}
+* html #access ul li.current_page_item a,
+* html #access ul li.current-menu-ancestor a,
+* html #access ul li.current-menu-item a,
+* html #access ul li.current-menu-parent a,
+* html #access ul li a:hover {
+	color: #fff;
+}
