@@ -3,11 +3,13 @@
 <head profile="http://gmpg.org/xfn/11">
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <title><?php wp_title(); ?></title> 
+<script src="<?php bloginfo('template_url'); ?>/js/snow.js" type="text/javascript"></script>
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<canvas id="canvas"></canvas>
 <div id="page">
 <div id="header" role="banner">
 	<div id="headerimg">

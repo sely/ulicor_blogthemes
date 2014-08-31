@@ -13,76 +13,32 @@ Tags: custom-background, sticky-post, theme-options, dark, custom-menu
 
 */
 
-@color_primary_bg: #1E3058;	/* Main Primary color */
-@color_primary_post: #B1B4BB;
-@color_primary_hl: #8694B0;
-@color_primary_marker: #020A1B;
-@color_primary_text: #010C23;
+@import 'reset';
+@import 'colors';
 
-
-
-/* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
--------------------------------------------------------------- */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-	background: transparent;
-	border: 0;
-	margin: 0;
-	padding: 0;
-	vertical-align: baseline;
-}
-body {
-	line-height: 1;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	clear: both;
-	font-weight: normal;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote {
-	quotes: none;
-}
-blockquote:before, blockquote:after {
-	content: '';
-	content: none;
-}
-del {
-	text-decoration: line-through;
-}
-/* tables still need 'cellspacing="0"' in the markup */
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-a img {
-	border: none;
-}
-
-/**/
 body {
 	font-size: 12px; 
 	font-family: "Times New Roman", Georgia, Serif;
-	background-color:@color_primary_bg;
-	color: @color_primary_text;
+	background-color:@color_primary_4;
+	color: @color_primary_4;
 	background-attachment:fixed;
 	background-image: none; /*url(images/stones.jpg);*/
 	margin: 0 0 20px 0;
 	padding: 0;
 }
 
+/*snow canvas*/
+canvas {
+	display: block;
+	position: fixed;
+	z-index: -100;
+}
+
+
+
 .entry {
 	clear:both;
+	margin-top: 15px;
 }
 	
 #content {
@@ -102,8 +58,8 @@ body {
 }
 
 .pages {
-clear:both;
-margin-bottom:8px;
+	clear:both;
+	margin-bottom:8px;
 }
 
 .narrowcolumn .postmetadata {
@@ -111,28 +67,10 @@ margin-bottom:8px;
 }
 
 .thread-alt {
-	background-color: #f8f8f8;
+	background-color: @color_complement_0;
 }
 .thread-even {
 	background-color: white;
-}
-
-	
-#footer {
-	clear:both;
-	background-color: #999;
-    border-radius: 5px;
-    color: #000;
-    display: inline-block;
-    float: right;
-    margin: 20px 31px 0 0;
-	padding: 4px 2px;
-    text-align: center;
-    width: 290px;
-}
-	
-#footer a:link, #footer a:visited {
-	color:#000;
 }
 
 small {
@@ -148,20 +86,21 @@ small {
 }
 	
 #respond {
- 	color:#fff;	
+ 	color: @color_primary_4;	
 }
 
 #respond h3 {
-	color:#fff;
+	color: @color_primary_4;
 }
 
 #respond a:link, #respond a:visited {
-	color:#fff;
+	color: @color_primary_4;
 }
 
 h2 {
+    font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
 	font-size: 28px;
-	color:#666; 
+	color:@color_primary_4; 
 	line-height:30px;
 }
 
@@ -170,26 +109,49 @@ h2.pagetitle {
 }
 
 h3, h3 a, h3 a:visited {
-	color:#000;
+    font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
+	color:@color_primary_3;
 }
 
-h2, h2 a, h2 a:hover, h2 a:visited, h3, h3 a, h3 a:hover, h3 a:visited, #sidebar h2, #wp-calendar caption, cite {
+a:hover {
+	color: @color_secondary_1_1;  
+	background-color: @color_complement_3;
+}
+
+h2, h2 a, h2 a:hover, h2 a:visited, 
+#sidebar h2, #wp-calendar caption, cite {
 	text-decoration: none;
-}
-
-
-#sidebar h2 {
-	font-family: 'Lucida Grande', Verdana, Sans-Serif;
-	font-size: 1.2em;
 }
 
 h3 {
 	font-size: 1.3em;
 }
 
-.entry p a:visited {
-	color: #b85b5a;
+a, h2 a:hover, h3 a:hover {
+	color: @color_secondary_1_4;  
+	text-decoration:none;
 }
+
+h2.pagetitle {
+	margin-top: 0px;
+	text-align: left;
+}
+
+h2, h2 a, h2 a:visited{
+	font-variant: small-caps;
+	color:@color_primary_4;
+}
+h2 a:hover{
+	color:@color_complement_1;
+}
+	
+
+#sidebar h2 {
+	margin: 5px 0 0;
+	padding: 0;
+}
+ 
+
 
 .sticky {
 	padding: 0 10px 10px;
@@ -238,9 +200,6 @@ cite, em, i {
 
 
 
-#sidebar {
-	font: 1em 'Lucida Grande', Verdana, Arial, Sans-Serif;
-}
 
 small, #sidebar ul ul li, #sidebar ul ol li, .nocomments, .postmetadata, blockquote, strike {
 	color: #000;
@@ -256,32 +215,6 @@ acronym, abbr, span.caps {
 	letter-spacing: .07em;
 }
 
-a, h2 a:hover, h3 a:hover {
-	color: #4a0000;  
-	text-decoration:none;
-}
-
-a:hover {
- text-decoration:underline;
-}
-
-#wp-calendar #prev a, #wp-calendar #next a {
-	font-size: 9pt;
-	}
-
-#wp-calendar a {
-	text-decoration: none;
-	}
-
-#wp-calendar caption {
-	font: bold 1.3em 'Lucida Grande', Verdana, Arial, Sans-Serif;
-	text-align: center;
-	}
-
-#wp-calendar th {
-	font-style: normal;
-	text-transform: capitalize;
-	}
 
 #page {
 	margin: 0px auto;
@@ -318,7 +251,7 @@ a:hover {
 	background-image:url(images/post.png);
 	background-repeat:repeat-y;
 	*/
-	background-color: @color_primary_post;
+	background-color: @color_primary_1;
 	margin:0;
 	padding:8px 33px 10px;
 	text-align:left;
@@ -340,11 +273,6 @@ a:hover {
 	font-size:18px;
 	}
 
-@import 'post.less';
-@import 'sidebar.less';
-@import 'comments.less';
-@import 'calendar.less';
-@import 'access.less';
 
 .widecolumn .smallattachment {
 	text-align: center;
@@ -371,22 +299,26 @@ h1 {
 	font-size: 45px;
 	text-align: left;
 	text-transform:uppercase;
-	}
+}
 
 	
 #header h1  {
- 	color:white;
+ 	color: @color_complement_1;
 	font-family:arial;
 	margin-top:0;
 	text-decoration:none;
 	}
 	
 h1 a, h1 a:hover, h1 a:visited {
- 	color:white;
+ 	color: @color_complement_1;
 	display:inline-block;
 	font-family:arial;
 	text-decoration:none;
-	}
+}
+h1 a:hover{
+ 	color: @color_complement_2;
+ 	background-color: transparent;
+}
 
 #headerimg .description {
  	color:white;
@@ -397,21 +329,6 @@ h1 a, h1 a:hover, h1 a:visited {
 	}
 	
  
-h2.pagetitle {
-	margin-top: 0px;
-	text-align: left;
-}
-
-h2, h2 a, h2 a:visited{
-	color:#000;
- 	}
-	
-
-#sidebar h2 {
-	margin: 5px 0 0;
-	padding: 0;
-	}
- 
 
 
 #content img {
@@ -419,7 +336,7 @@ h2, h2 a, h2 a:visited{
 	height:auto;
     overflow: auto;
     padding: 0;
-	}
+}
 
 #sidebar img {
     max-width: 184px;
@@ -508,6 +425,21 @@ html>body .entry li {
 	}
 
 
+.entry form { 
+	text-align:center;
+	}
+
+select {
+	width: 130px;
+	}
+
+
+
+.alt {
+	margin: 0;
+	padding: 10px;
+	}
+
 	
 acronym, abbr, span.caps {
 	cursor: help;
@@ -533,53 +465,6 @@ blockquote {
 
 blockquote {
     quotes: none;
-}
-
-#content table {
-    border: 1px solid #E7E7E7;
-    margin: 0 -1px 24px 0;
-    text-align: left;
-    width: 100%;
-}
-#content tr th, #content thead th {
-    color: #888888;
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 18px;
-    padding: 9px 24px;
-}
-#content tr td {
-    border-top: 1px solid #E7E7E7;
-    padding: 6px 24px;
-}
-#content tr.odd td {
-    background: none repeat scroll 0 0 #F2F7FC;
-}
-#post   h2 {
-margin-bottom:10px;
-}
-#content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
-    color: #000000;
-    line-height: 1.5em; 
-}
-
-#content h1 {
-font-size:32px;
-}
-#content h2 {
-font-size:26px;
-}
-#content h3 {
-font-size:18px;
-}
-#content h4 {
-font-size:14px;
-}
-#content h5 {
-font-size:10px;
-}
-#content h6 {
-font-size:8px;
 }
 
 .date {
@@ -608,7 +493,7 @@ a img {
 	}
 
 .navigation {
-	color:#FFFFFF;
+	color:@color_complement_1;
 	display:block;
 	padding-left:20px;
 	padding-right:20px;
@@ -617,8 +502,13 @@ a img {
 	}
 	
 .navigation a:link, .navigation a:visited {
-	color:#fff;
+	color:@color_complement_1;
 	}
+
+.navigation a:hover {
+	background-color:transparent; 
+	color:@color_complement_0;
+}
 
 .aligncenter,
 div.aligncenter {
@@ -654,13 +544,18 @@ div.aligncenter {
 }
 
 	
-	.gallery-caption  {
-	
-	}
-	.bypostauthor  {
-	
-	}
+.gallery-caption  {
+
+}
+.bypostauthor  {
+
+}
 	
 
-/* =Menu
--------------------------------------------------------------- */
+@import 'post';
+@import 'sidebar';
+@import 'comments';
+@import 'calendar';
+@import 'access';
+@import 'content';
+@import 'footer';
