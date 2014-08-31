@@ -6,6 +6,8 @@
 <script src="<?php bloginfo('template_url'); ?>/js/snow.js" type="text/javascript"></script>
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
+
+<?php wp_head(); ?>
 <script>
 	// google analytics
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -16,7 +18,6 @@
 	ga('create', 'UA-54342496-1', 'auto');
 	ga('send', 'pageview');
 </script>
-<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <canvas id="canvas"></canvas>
