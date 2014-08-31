@@ -6,14 +6,15 @@ get_header(); ?>
 		<div id="postbg">
 				<div id="postheader"></div>
 				<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
+				<h3><?php the_category(', ') ?></h3>
 				<h2 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-				<div class="date"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_time('F jS, Y') ?></a> <!-- by <?php the_author() ?> --></div>
+				<div class="date"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_date() ?></a> <!-- by <?php the_author() ?> --></div>
 
 				<div class="entry">
-					<?php the_content('Read the rest of this entry &raquo;'); ?>
+					<?php the_content('more &raquo;'); ?>
 				</div>
 
-				<p class="postmetadata"><?php the_tags('Tags: ', ', ', '<br />'); ?> Posted in <?php the_category(', ') ?> |  <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?> <?php edit_post_link('Edit Entry', '| <strong>', '</strong>'); ?> </p>
+				<p class="postmetadata"><?php the_tags('Tags: ', ', ', '<br />'); ?> In <?php the_category(', ') ?> |  <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?> <?php edit_post_link('Edit Entry', '| <strong>', '</strong>'); ?> </p>
 			
 				</div>
 				<div id="postfooter"></div>

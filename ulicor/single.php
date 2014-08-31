@@ -13,6 +13,8 @@ get_header();
 				
 
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
+
+			<h3><?php the_category(', ') ?></h3>
 			<h2><?php the_title(); ?></h2>
 
 			<div class="entry">
